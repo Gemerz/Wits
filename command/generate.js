@@ -9,18 +9,19 @@ module.exports = {
 
         try {
             const certInfo = await certificationHelper.askQuestion();
+            const resourcePath = util.RESOURCE_PATH;
             const developerCAPath = path.resolve(
-                util.RESOURCE_PATH,
+                resourcePath,
                 'developer',
                 'tizen-developer-ca.cer'
             );
             const developerPrivateKeyPath = path.resolve(
-                util.RESOURCE_PATH,
+                resourcePath,
                 'developer',
                 'tizen-developer-ca-privatekey.pem'
             );
             const tizenCM = new common.TizenCM(
-                util.RESOURCE_PATH,
+                resourcePath,
                 developerCAPath,
                 developerPrivateKeyPath
             );
@@ -36,6 +37,48 @@ module.exports = {
                 certInfo.emailInfo
             );
             console.log('Completed to generate a Tizen certification');
+
+            const profileManager = new common.ProfileManager(resourcePath);
+            const profileName = 'test0811';
+            const authorCA = path.resolve(
+                resourcePath,
+                'developer',
+                'tizen-developer-ca.cer'
+            );
+            const authorCertPath = path.resolve(
+                resourcePath,
+                '../',
+                'resource',
+                'Author',
+                'test0811.p12'
+            );
+            const authorPassword = 'test0811';
+            const distributorCA = path.resolve(
+                resourcePath,
+                'distributor',
+                'sdk-partner',
+                'tizen-distributor-signer.cer'
+            );
+            const distributorCertPath = path.resolve(
+                resourcePath,
+                'distributor',
+                'sdk-partner',
+                'tizen-distributor-signer.p12'
+            );
+            const distributorPassword = 'tizenpkcs12passfordsigner';
+
+            profileManager.registerProfile(
+                profileName,
+                authorCA,
+                authorCertPath,
+                authorPassword,
+                distributorCA,
+                distributorCertPath,
+                distributorPassword
+            );
+            console.log('Completed to register a Profile');
+
+            profileManager.setActivateProfile(profileName);
         } catch (e) {
             console.error(`Failed to run: ${e}`);
         }
