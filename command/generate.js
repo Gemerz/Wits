@@ -56,13 +56,13 @@ module.exports = {
             const distributorCA = path.resolve(
                 resourcePath,
                 'distributor',
-                'sdk-partner',
-                'tizen-distributor-signer.cer'
+                'sdk-public',
+                'tizen-distributor-ca.cer'
             );
             const distributorCertPath = path.resolve(
                 resourcePath,
                 'distributor',
-                'sdk-partner',
+                'sdk-public',
                 'tizen-distributor-signer.p12'
             );
             const distributorPassword = 'tizenpkcs12passfordsigner';
