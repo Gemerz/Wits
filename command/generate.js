@@ -9,73 +9,40 @@ module.exports = {
 
         try {
             const certInfo = await certificationHelper.askQuestion();
-            const resourcePath = util.RESOURCE_PATH;
-            const developerCAPath = path.resolve(
-                resourcePath,
-                'developer',
-                'tizen-developer-ca.cer'
-            );
-            const developerPrivateKeyPath = path.resolve(
-                resourcePath,
-                'developer',
-                'tizen-developer-ca-privatekey.pem'
-            );
-            const tizenCM = new common.TizenCM(
-                resourcePath,
-                developerCAPath,
-                developerPrivateKeyPath
-            );
-            tizenCM.createCert(
-                certInfo.keyfileName,
-                certInfo.authorName,
-                certInfo.authorPassword,
-                certInfo.countryInfo,
-                certInfo.stateInfo,
-                certInfo.cityInfo,
-                certInfo.organizationInfo,
-                certInfo.departmentInfo,
-                certInfo.emailInfo
-            );
+            const tizenCM = new common.TizenCM(util.RESOURCE_PATH);
+            const authorInfo = {
+                authorFile: certInfo.keyfileName,
+                authorName: certInfo.authorName,
+                authorPassword: certInfo.authorPassword,
+                authorCountry: certInfo.countryInfo,
+                authorState: certInfo.stateInfo,
+                authorCity: certInfo.cityInfo,
+                authorOrganization: certInfo.organizationInfo,
+                authorDepartment: certInfo.departmentInfo,
+                authorEmail: certInfo.emailInfo
+            };
+            tizenCM.createCert(authorInfo);
             console.log('Completed to generate a Tizen certification');
 
             const profileManager = new common.ProfileManager(resourcePath);
             const profileName = 'testpartner';
-            const authorCA = path.resolve(
-                resourcePath,
-                'developer',
-                'tizen-developer-ca.cer'
+            const authorProfile = {
+                authorCA: TizenCM.getTizenDeveloperCA(),
+                authorCertPath: path.resolve(
+                    resourcePath,
+                    'Author',
+                    'testpartner.p12'
+                ),
+                authorPassword: certInfo.authorPassword
+            };
+            const distributorProfile = TizenCM.getTizenDistributorProfile(
+                'public'
             );
-            const authorCertPath = path.resolve(
-                resourcePath,
-                '../',
-                'resource',
-                'Author',
-                'testpartner.p12'
-            );
-            const authorPassword = 'testpartner';
-            const distributorCA = path.resolve(
-                resourcePath,
-                'distributor',
-                'sdk-partner',
-                'tizen-distributor-ca.cer'
-            );
-            const distributorCertPath = path.resolve(
-                resourcePath,
-                'distributor',
-                'sdk-partner',
-                'tizen-distributor-signer.p12'
-            );
-            // const distributorPassword = 'tizenpkcs12passfordsigner';
-            const distributorPassword = 'testpartner';
 
             profileManager.registerProfile(
                 profileName,
-                authorCA,
-                authorCertPath,
-                authorPassword,
-                distributorCA,
-                distributorCertPath,
-                distributorPassword
+                authorProfile,
+                distributorProfile
             );
             console.log('Completed to register a Profile');
 
