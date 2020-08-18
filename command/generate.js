@@ -10,6 +10,7 @@ module.exports = {
         try {
             const certInfo = await certificationHelper.askQuestion();
             const tizenCM = new common.TizenCM(util.RESOURCE_PATH);
+            await tizenCM.init();
             const authorInfo = {
                 authorFile: certInfo.keyfileName,
                 authorName: certInfo.authorName,
@@ -25,13 +26,13 @@ module.exports = {
             console.log('Completed to generate a Tizen certification');
 
             const profileManager = new common.ProfileManager(resourcePath);
-            const profileName = 'testpartner';
+            const profileName = certInfo.authorName;
             const authorProfile = {
                 authorCA: TizenCM.getTizenDeveloperCA(),
                 authorCertPath: path.resolve(
                     resourcePath,
                     'Author',
-                    'testpartner.p12'
+                    `${certInfo.authorName}.p12`
                 ),
                 authorPassword: certInfo.authorPassword
             };
