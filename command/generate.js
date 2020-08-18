@@ -39,7 +39,7 @@ module.exports = {
             console.log('Completed to generate a Tizen certification');
 
             const profileManager = new common.ProfileManager(resourcePath);
-            const profileName = 'test0811';
+            const profileName = 'testpartner';
             const authorCA = path.resolve(
                 resourcePath,
                 'developer',
@@ -50,22 +50,23 @@ module.exports = {
                 '../',
                 'resource',
                 'Author',
-                'test0811.p12'
+                'testpartner.p12'
             );
-            const authorPassword = 'test0811';
+            const authorPassword = 'testpartner';
             const distributorCA = path.resolve(
                 resourcePath,
                 'distributor',
-                'sdk-public',
+                'sdk-partner',
                 'tizen-distributor-ca.cer'
             );
             const distributorCertPath = path.resolve(
                 resourcePath,
                 'distributor',
-                'sdk-public',
+                'sdk-partner',
                 'tizen-distributor-signer.p12'
             );
-            const distributorPassword = 'tizenpkcs12passfordsigner';
+            // const distributorPassword = 'tizenpkcs12passfordsigner';
+            const distributorPassword = 'testpartner';
 
             profileManager.registerProfile(
                 profileName,

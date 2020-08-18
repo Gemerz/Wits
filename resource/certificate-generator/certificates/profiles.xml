@@ -1,8 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<profiles active="test0811" version="3.1">
+<profiles active="testpartner" version="3.1">
   <profile name="test0811">
     <profileitem ca="E:\dev\Wits\resource\certificate-generator\certificates\developer\tizen-developer-ca.cer" distributor="0" key="E:\dev\Wits\resource\certificate-generator\resource\Author\test0811.p12" password="E:\dev\Wits\resource\certificate-generator\resource\Author\test0811.pwd" rootca=""/>
     <profileitem ca="E:\dev\Wits\resource\certificate-generator\certificates\distributor\sdk-public\tizen-distributor-ca.cer" distributor="1" key="E:\dev\Wits\resource\certificate-generator\certificates\distributor\sdk-public\tizen-distributor-signer.p12" password="E:\dev\Wits\resource\certificate-generator\certificates\distributor\sdk-public\tizen-distributor-signer.pwd" rootca=""/>
+    <profileitem ca="" distributor="2" key="" password="" rootca=""/>
+  </profile>
+  <profile name="testpartner">
+    <profileitem ca="E:\dev\Wits\resource\certificate-generator\certificates\developer\tizen-developer-ca.cer" distributor="0" key="E:\dev\Wits\resource\certificate-generator\resource\Author\testpartner.p12" password="E:\dev\Wits\resource\certificate-generator\resource\Author\testpartner.pwd" rootca=""/>
+    <profileitem ca="E:\dev\Wits\resource\certificate-generator\certificates\distributor\sdk-partner\tizen-distributor-ca.cer" distributor="1" key="E:\dev\Wits\resource\certificate-generator\certificates\distributor\sdk-partner\tizen-distributor-signer.p12" password="E:\dev\Wits\resource\certificate-generator\certificates\distributor\sdk-partner\tizen-distributor-signer.pwd" rootca=""/>
+    <profileitem ca="" distributor="2" key="" password="" rootca=""/>
+  </profile>
+  <profile name="testpartner">
+    <profileitem ca="E:\dev\Wits\resource\certificate-generator\certificates\developer\tizen-developer-ca.cer" distributor="0" key="E:\dev\Wits\resource\certificate-generator\resource\Author\testpartner.p12" password="E:\dev\Wits\resource\certificate-generator\resource\Author\testpartner.pwd" rootca=""/>
+    <profileitem ca="E:\dev\Wits\resource\certificate-generator\certificates\distributor\sdk-partner\tizen-distributor-ca.cer" distributor="1" key="E:\dev\Wits\resource\certificate-generator\certificates\distributor\sdk-partner\tizen-distributor-signer.p12" password="E:\dev\Wits\resource\certificate-generator\certificates\distributor\sdk-partner\tizen-distributor-signer.pwd" rootca=""/>
+    <profileitem ca="" distributor="2" key="" password="" rootca=""/>
+  </profile>
+  <profile name="testpartner">
+    <profileitem ca="E:\dev\Wits\resource\certificate-generator\certificates\developer\tizen-developer-ca.cer" distributor="0" key="E:\dev\Wits\resource\certificate-generator\resource\Author\testpartner.p12" password="E:\dev\Wits\resource\certificate-generator\resource\Author\testpartner.pwd" rootca=""/>
+    <profileitem ca="E:\dev\Wits\resource\certificate-generator\certificates\distributor\sdk-partner\tizen-distributor-ca.cer" distributor="1" key="E:\dev\Wits\resource\certificate-generator\certificates\distributor\sdk-partner\tizen-distributor-signer.p12" password="E:\dev\Wits\resource\certificate-generator\certificates\distributor\sdk-partner\tizen-distributor-signer.pwd" rootca=""/>
     <profileitem ca="" distributor="2" key="" password="" rootca=""/>
   </profile>
 </profiles>
