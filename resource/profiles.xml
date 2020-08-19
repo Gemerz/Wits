@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<profiles active="testpartner1" version="3.1">
-  <profile name="testpartner1">
-    <profileitem ca="/Users/toast/Desktop/Wits/node_modules/@tizentv/webide-common-tizentv/tools/certificate-generator/certificates/developer/tizen-developer-ca.cer" distributor="0" key="/Users/toast/Desktop/Wits/resource/Author/testpartner1.p12" password="/Users/toast/Desktop/Wits/resource/Author/testpartner1.pwd" rootca=""/>
-    <profileitem ca="/Users/toast/Desktop/Wits/node_modules/@tizentv/webide-common-tizentv/tools/certificate-generator/certificates/distributor/sdk-partner/tizen-distributor-ca.cer" distributor="1" key="/Users/toast/Desktop/Wits/node_modules/@tizentv/webide-common-tizentv/tools/certificate-generator/certificates/distributor/sdk-partner/tizen-distributor-signer.p12" password="/Users/toast/Desktop/Wits/node_modules/@tizentv/webide-common-tizentv/tools/certificate-generator/certificates/distributor/sdk-partner/tizen-distributor-signer.pwd" rootca=""/>
-    <profileitem ca="" distributor="2" key="" password="" rootca=""/>
-  </profile>
-</profiles>
