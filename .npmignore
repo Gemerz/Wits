@@ -4,6 +4,6 @@ archive/
 container.zip
 tools.zip
 resource.zip
-resource/certificate-generator
 container/.resource
 container/build
+.DS_Store

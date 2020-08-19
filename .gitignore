@@ -7,3 +7,4 @@ tools.zip
 resource.zip
 container/.resource
 container/build
+.DS_Store
