@@ -26,13 +26,13 @@
     var socket = null;
     var iconDimTimer = null;
     var isLoadingContents = false;
-    var CONTENT_PATH = '/home/owner/share/tmp/sdk_tools/mon2WITs';
-    var CONTENT_SRC = '/home/owner/share/tmp/sdk_tools/mon2WITs/index.html';
-    var IP = 'http://10.88.106.190';
-    var PORT = '3558';
+    var CONTENT_PATH = '/home/owner/share/tmp/sdk_tools/wed1WITs';
+    var CONTENT_SRC = '/home/owner/share/tmp/sdk_tools/wed1WITs/index.html';
+    var IP = 'http://192.168.0.20';
+    var PORT = '9430';
     var CONNECTED = 'Connected';
     var DISCONNECTED = 'Disconnected';
-    var HOST_BASE_CONTENT_PATH = 'E:/workspace/mon2';
+    var HOST_BASE_CONTENT_PATH = '/Users/toast/workspace/wed1';
 
     window.onload = function () {
         console.log('onload!!!');

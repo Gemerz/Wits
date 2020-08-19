@@ -25,19 +25,19 @@ module.exports = {
             tizenCM.createCert(authorInfo);
             console.log('Completed to generate a Tizen certification');
 
-            const profileManager = new common.ProfileManager(resourcePath);
+            const profileManager = new common.ProfileManager(util.RESOURCE_PATH);
             const profileName = certInfo.authorName;
             const authorProfile = {
-                authorCA: TizenCM.getTizenDeveloperCA(),
+                authorCA: common.TizenCM.getTizenDeveloperCA(),
                 authorCertPath: path.resolve(
-                    resourcePath,
+                    util.RESOURCE_PATH,
                     'Author',
                     `${certInfo.authorName}.p12`
                 ),
                 authorPassword: certInfo.authorPassword
             };
-            const distributorProfile = TizenCM.getTizenDistributorProfile(
-                'public'
+            const distributorProfile = common.TizenCM.getTizenDistributorProfile(
+                'partner'
             );
 
             profileManager.registerProfile(
