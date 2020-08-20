@@ -17,6 +17,7 @@ module.exports = {
             const certInfo = await certificationHelper.askQuestion();
             util.createEmptyDirectory(resourceDir);
             util.RESOURCE_PATH = resourceDir;
+
             const tizenCM = new common.TizenCM(resourceDir);
             await tizenCM.init();
             const authorInfo = {
@@ -45,7 +46,7 @@ module.exports = {
                 authorPassword: certInfo.authorPassword
             };
             const distributorProfile = tizenCM.getTizenDistributorProfile(
-                'partner'
+                certInfo.privilegeLevel
             );
 
             profileManager.registerProfile(
