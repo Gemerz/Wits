@@ -7,11 +7,7 @@ module.exports = {
     run: async () => {
         console.log(`Generate a certification............`);
 
-        const resourceDir = path.resolve(
-            util.WITS_BASE_PATH,
-            '../',
-            'resource'
-        );
+        const resourceDir = path.resolve(__dirname, '../', 'resource');
 
         try {
             const certInfo = await certificationHelper.askQuestion();
@@ -21,15 +17,15 @@ module.exports = {
             const tizenCM = new common.TizenCM(resourceDir);
             await tizenCM.init();
             const authorInfo = {
-                authorFile: certInfo.keyfileName,
+                keyFileName: certInfo.keyFileName,
                 authorName: certInfo.authorName,
                 authorPassword: certInfo.authorPassword,
-                authorCountry: certInfo.countryInfo,
-                authorState: certInfo.stateInfo,
-                authorCity: certInfo.cityInfo,
-                authorOrganization: certInfo.organizationInfo,
-                authorDepartment: certInfo.departmentInfo,
-                authorEmail: certInfo.emailInfo
+                countryInfo: certInfo.countryInfo,
+                stateInfo: certInfo.stateInfo,
+                cityInfo: certInfo.cityInfo,
+                organizationInfo: certInfo.organizationInfo,
+                departmentInfo: certInfo.departmentInfo,
+                emailInfo: certInfo.emailInfo
             };
             tizenCM.createCert(authorInfo);
             console.log('Completed to generate a Tizen certification');
@@ -41,7 +37,7 @@ module.exports = {
                 authorCertPath: path.resolve(
                     resourceDir,
                     'Author',
-                    `${certInfo.authorName}.p12`
+                    `${certInfo.keyFileName}.p12`
                 ),
                 authorPassword: certInfo.authorPassword
             };
