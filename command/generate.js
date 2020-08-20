@@ -7,9 +7,17 @@ module.exports = {
     run: async () => {
         console.log(`Generate a certification............`);
 
+        const resourceDir = path.resolve(
+            util.WITS_BASE_PATH,
+            '../',
+            'resource'
+        );
+
         try {
             const certInfo = await certificationHelper.askQuestion();
-            const tizenCM = new common.TizenCM(util.RESOURCE_PATH);
+            util.createEmptyDirectory(resourceDir);
+            util.RESOURCE_PATH = resourceDir;
+            const tizenCM = new common.TizenCM(resourceDir);
             await tizenCM.init();
             const authorInfo = {
                 authorFile: certInfo.keyfileName,
@@ -25,18 +33,18 @@ module.exports = {
             tizenCM.createCert(authorInfo);
             console.log('Completed to generate a Tizen certification');
 
-            const profileManager = new common.ProfileManager(util.RESOURCE_PATH);
+            const profileManager = new common.ProfileManager(resourceDir);
             const profileName = certInfo.authorName;
             const authorProfile = {
-                authorCA: common.TizenCM.getTizenDeveloperCA(),
+                authorCA: tizenCM.getTizenDeveloperCA(),
                 authorCertPath: path.resolve(
-                    util.RESOURCE_PATH,
+                    resourceDir,
                     'Author',
                     `${certInfo.authorName}.p12`
                 ),
                 authorPassword: certInfo.authorPassword
             };
-            const distributorProfile = common.TizenCM.getTizenDistributorProfile(
+            const distributorProfile = tizenCM.getTizenDistributorProfile(
                 'partner'
             );
 
