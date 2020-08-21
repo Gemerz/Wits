@@ -26,13 +26,13 @@
     var socket = null;
     var iconDimTimer = null;
     var isLoadingContents = false;
-    var CONTENT_PATH = '/home/owner/share/tmp/sdk_tools/thu1WITs';
-    var CONTENT_SRC = '/home/owner/share/tmp/sdk_tools/thu1WITs/index.html';
+    var CONTENT_PATH = '/home/owner/share/tmp/sdk_tools/fri1WITs';
+    var CONTENT_SRC = '/home/owner/share/tmp/sdk_tools/fri1WITs/index.html';
     var IP = 'http://10.88.106.190';
-    var PORT = '9442';
+    var PORT = '4827';
     var CONNECTED = 'Connected';
     var DISCONNECTED = 'Disconnected';
-    var HOST_BASE_CONTENT_PATH = 'E:/dev/tizenworkspace/thu1';
+    var HOST_BASE_CONTENT_PATH = 'E:/dev/tizenworkspace/fri1';
 
     window.onload = function () {
         console.log('onload!!!');
