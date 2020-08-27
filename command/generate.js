@@ -20,12 +20,12 @@ module.exports = {
                 keyFileName: certInfo.keyFileName,
                 authorName: certInfo.authorName,
                 authorPassword: certInfo.authorPassword,
-                countryInfo: certInfo.countryInfo,
-                stateInfo: certInfo.stateInfo,
-                cityInfo: certInfo.cityInfo,
-                organizationInfo: certInfo.organizationInfo,
-                departmentInfo: certInfo.departmentInfo,
-                emailInfo: certInfo.emailInfo
+                countryInfo: '',
+                stateInfo: '',
+                cityInfo: '',
+                organizationInfo: '',
+                departmentInfo: '',
+                emailInfo: ''
             };
             tizenCM.createCert(authorInfo);
             console.log('Completed to generate a Tizen certification');
