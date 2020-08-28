@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:tizen="http://tizen.org/ns/widgets" id="http://yourdomain/thursday5" version="1.0.0" viewmodes="maximized">
-  <tizen:application id="4nynAqKLRL.thursday5WITs" package="4nynAqKLRL" required_version="2.3"/>
-  <content src="index.html"/>
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:tizen="http://tizen.org/ns/widgets" version="1.0.0" viewmodes="maximized">
+  <tizen:application id="GsHW1jmmkm.vscodeWITs" package="GsHW1jmmkm" required_version="2.3"/>
+  <name>vscode</name>
   <feature name="http://tizen.org/feature/screen.size.normal.1080.1920"/>
   <icon src="icon.png"/>
-  <name>thursday5</name>
-  <tizen:profile name="tv-samsung"/>
+  <content src="index.html"/>
   <tizen:setting screen-orientation="landscape" context-menu="enable" background-support="disable" encryption="disable" install-location="auto" hwkey-event="enable"/>
   <access origin="*" subdomains="true"/>
   <tizen:privilege name="http://tizen.org/privilege/filesystem.read"/>
