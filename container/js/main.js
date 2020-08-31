@@ -26,13 +26,13 @@
     var socket = null;
     var iconDimTimer = null;
     var isLoadingContents = false;
-    var CONTENT_PATH = '/home/owner/share/tmp/sdk_tools/vscodeWITs';
-    var CONTENT_SRC = '/home/owner/share/tmp/sdk_tools/vscodeWITs/index.html';
+    var CONTENT_PATH = '/home/owner/share/tmp/sdk_tools/thursdayWITs';
+    var CONTENT_SRC = '/home/owner/share/tmp/sdk_tools/thursdayWITs/index.html';
     var IP = 'http://10.88.106.190';
-    var PORT = '8498';
+    var PORT = '4417';
     var CONNECTED = 'Connected';
     var DISCONNECTED = 'Disconnected';
-    var HOST_BASE_CONTENT_PATH = 'e:/dev/workspace/vscode';
+    var HOST_BASE_CONTENT_PATH = 'E:/dev/tizenworkspace/thursday';
 
     window.onload = function () {
         console.log('onload!!!');
